@@ -14,7 +14,6 @@ class ViewController: UIViewController {
 
     @IBAction func buttonClick(_ sender: Any) {
         Panda.requestModel(type: API.getNormalModel) { (_: BarelyModel, _) in
-
         } failure: { _, _ in
         }
     }
