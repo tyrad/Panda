@@ -78,6 +78,8 @@ public struct RequestOptions {
         options.resultCodeKeyword = nil
         return options
     }
+
+    public init() {}
 }
 
 public class DefaultAlamofireManager: Alamofire.SessionManager {
