@@ -9,15 +9,15 @@
 import Foundation
 import ObjectMapper
 
-enum PandaModelTool {
+struct PandaModelTool {
     // Object类型数据转换
-    static func objectFromJSON<T: Mappable>(_ jsonObject: Any?) -> T? {
+    public static func objectFromJSON<T: Mappable>(_ jsonObject: Any?) -> T? {
         let mapperModel = Mapper<T>()
         return mapperModel.map(JSONObject: jsonObject)
     }
 
     // Object List 类型数据转换
-    static func listFromJSON<T: Mappable>(_ jsonObject: Any?) -> [T]? {
+    public static func listFromJSON<T: Mappable>(_ jsonObject: Any?) -> [T]? {
         let mapperModel = Mapper<T>()
         return mapperModel.mapArray(JSONObject: jsonObject)
     }

@@ -12,7 +12,7 @@ import ObjectMapper
 import Result
 
 /// Panda
-public enum Panda {
+public struct Panda {
     private static func generateDefaultProvider<T: TargetType>(_ target: T,
                                                                _ needStub: Bool,
                                                                _ options: RequestOptions) -> MoyaProvider<T>
@@ -65,7 +65,7 @@ public enum Panda {
 
     /// 请求Mappable模型数据[接口返回JSON格式数据]
     @discardableResult
-    static func requestModel<T: Mappable, R: TargetType>(
+    public static func requestModel<T: Mappable, R: TargetType>(
         type: R,
         options: RequestOptions = RequestOptions(),
         progress: ProgressBlock? = nil,
@@ -95,7 +95,7 @@ public enum Panda {
 
     /// 请求的data是简单的类型,例如 int string 等等 [接口返回JSON格式数据]
     @discardableResult
-    static func requestSimpleType<T, R: TargetType>(
+    public static func requestSimpleType<T, R: TargetType>(
         type: R,
         options: RequestOptions = RequestOptions(),
         progress: ProgressBlock? = nil,
@@ -125,7 +125,7 @@ public enum Panda {
 
     /// 请求模型数组 [接口返回JSON格式数据]
     @discardableResult
-    static func requestModelList<T: Mappable, R: TargetType>(
+    public static func requestModelList<T: Mappable, R: TargetType>(
         type: R,
         options: RequestOptions = RequestOptions(),
         progress: ProgressBlock? = nil,
@@ -155,7 +155,7 @@ public enum Panda {
 
     /// 不关心data返回，验证请求成功即可 [接口返回JSON格式数据]
     @discardableResult
-    static func requestCheckSuccess<R: TargetType>(
+    public static func requestCheckSuccess<R: TargetType>(
         type: R,
         options: RequestOptions = RequestOptions(),
         progress: ProgressBlock? = nil,
@@ -179,7 +179,7 @@ public enum Panda {
 
     /// 将请求获取的Data数据原样返回，不验证请求返回的格式
     @discardableResult
-    static func requestData<R: TargetType>(
+    public static func requestData<R: TargetType>(
         type: R,
         options: RequestOptions = RequestOptions(),
         progress: ProgressBlock? = nil,
