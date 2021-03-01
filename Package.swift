@@ -13,7 +13,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/tristanhimmelman/ObjectMapper.git", .upToNextMajor(from: "4.1.0")),
+        .package(url: "https://github.com/tristanhimmelman/ObjectMapper.git", Package.Dependency.Requirement.exact("4.1.0")),
         .package(url: "https://github.com/Moya/Moya.git", Package.Dependency.Requirement.exact("13.0.1")),
     ],
     targets: [
