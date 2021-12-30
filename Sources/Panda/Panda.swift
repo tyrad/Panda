@@ -198,22 +198,6 @@ public struct Panda {
             }
         })
     }
-    
-    @discardableResult
-    static func requestSingle<R: TargetType>(
-        type: R,
-        options: RequestOptions? = nil,
-        checkSuccessParams: Bool = true,
-        progress: ProgressBlock? = nil,
-        useStub: Bool = false,
-        success: @escaping ((_: Data, _ msg: String) -> Void),
-        failure: @escaping ((String, _ statusCode: Int?) -> Void)
-    ) -> Cancellable {
-        let provider = generateDefaultProvider(type, useStub, options?.timeout)
-        return provider.request(type, progress: progress, completion: { result in
-            handleCompletion(result: result, checkSuccessParams: checkSuccessParams, failure: failure, modelCmd: success)
-        })
-    }
 
     private static func handleDataCompletion(
         result: Result<Moya.Response, MoyaError>,
